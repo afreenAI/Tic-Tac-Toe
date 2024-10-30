@@ -1,0 +1,148 @@
+body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    background: linear-gradient(135deg, #e0b3ff, #9c7bff); /* Smooth purple background gradient */
+    font-family: 'Arial', sans-serif;
+    margin: 0;
+}
+
+.container {
+    text-align: center;
+    background-color: #ffffff; /* White background for the container */
+    border-radius: 15px;
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.3);
+    padding: 40px;
+    width: 450px; /* Increased width for better spacing */
+    border: 2px solid #8e24aa; /* Purple border */
+    position: relative;
+}
+
+h1 {
+    font-size: 36px; /* Increased heading font size */
+    font-weight: bold; /* Made the heading bold */
+    margin-bottom: 20px; 
+    color: #6a1b9a; /* Darker purple for the heading */
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.2);
+}
+
+.controls {
+    display: flex; /* Use flexbox to align controls */
+    justify-content: space-around; /* Space controls evenly */
+    align-items: center; /* Align items vertically */
+    margin-bottom: 20px;
+    flex-wrap: wrap; /* Allow wrapping of controls to new line */
+}
+
+.control-group {
+    display: flex; /* Align label and select horizontally */
+    align-items: center; /* Center items vertically */
+    margin: 10px; /* Space between control groups */
+}
+
+label {
+    font-weight: bold;
+    color: #4a148c; /* Dark purple for labels */
+    font-size: 14px; /* Smaller font size for labels */
+    margin-right: 10px; /* Space between label and select */
+}
+
+select, button {
+    padding: 8px 12px; /* Adjusted padding */
+    margin: 5px;
+    border: none;
+    border-radius: 5px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+    transition: all 0.3s ease;
+    font-size: 14px; /* Smaller font size for buttons and selects */
+    background-color: #ab47bc; /* Button background color */
+    color: white;
+    cursor: pointer; /* Pointer cursor for buttons */
+}
+
+select {
+    background-color: #e1bee7; /* Light purple for select */
+    border: 1px solid #8e24aa; /* Darker purple border for select */
+}
+
+select:focus, button:focus {
+    outline: none;
+    box-shadow: 0 0 15px rgba(156, 39, 176, 0.6);
+}
+
+button:hover {
+    background-color: #9c27b0; /* Darker purple on hover */
+    transform: translateY(-2px); /* Slight lift effect */
+}
+
+#restart-button {
+    width: 200px; /* Fixed width for restart button */
+    margin: 20px auto; /* Centered margin */
+}
+
+#game-board {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 10px;
+}
+
+.cell {
+    width: 100px;
+    height: 100px;
+    background-color: #f3e5f5; /* Light purple for cells */
+    border: 2px solid #8e24aa; /* Darker purple border for cells */
+    border-radius: 10px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 56px; /* Smaller font size for cell content */
+    font-weight: bold;
+    color: #8e24aa; /* Purple color for text */
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+    position: relative; /* For z-index positioning */
+}
+
+.cell:hover {
+    transform: translateY(-3px); /* Lift effect on hover */
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
+}
+
+.cell.x {
+    color: #ff5252; /* Bright red for X */
+    text-shadow: 1px 1px 10px rgba(255, 82, 82, 0.6);
+}
+
+.cell.o {
+    color: #4caf50; /* Bright green for O */
+    text-shadow: 1px 1px 10px rgba(76, 175, 80, 0.6);
+}
+
+/* 3D Animation for cells */
+.cell {
+    perspective: 1000px; /* Add perspective for 3D effect */
+}
+
+.cell:active {
+    transform: translateY(4px) rotateX(10deg); /* 3D press effect */
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+}
+
+/* Responsive Design */
+@media (max-width: 500px) {
+    .container {
+        width: 90%;
+        padding: 20px; 
+    }
+
+    .cell {
+        width: 80px;
+        height: 80px;
+        font-size: 40px; 
+    }
+
+    h1 {
+        font-size: 28px; 
+    }
+}
